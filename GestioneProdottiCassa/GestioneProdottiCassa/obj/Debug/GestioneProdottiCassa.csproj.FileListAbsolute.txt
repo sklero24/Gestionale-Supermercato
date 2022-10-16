@@ -1,0 +1,8 @@
+C:\Users\sklero24\Desktop\GestioneProdottiCassa\GestioneProdottiCassa\bin\Debug\GestioneProdottiCassa.exe.config
+C:\Users\sklero24\Desktop\GestioneProdottiCassa\GestioneProdottiCassa\bin\Debug\GestioneProdottiCassa.exe
+C:\Users\sklero24\Desktop\GestioneProdottiCassa\GestioneProdottiCassa\bin\Debug\GestioneProdottiCassa.pdb
+C:\Users\sklero24\Desktop\GestioneProdottiCassa\GestioneProdottiCassa\obj\Debug\GestioneProdottiCassa.csproj.AssemblyReference.cache
+C:\Users\sklero24\Desktop\GestioneProdottiCassa\GestioneProdottiCassa\obj\Debug\GestioneProdottiCassa.csproj.SuggestedBindingRedirects.cache
+C:\Users\sklero24\Desktop\GestioneProdottiCassa\GestioneProdottiCassa\obj\Debug\GestioneProdottiCassa.csproj.CoreCompileInputs.cache
+C:\Users\sklero24\Desktop\GestioneProdottiCassa\GestioneProdottiCassa\obj\Debug\GestioneProdottiCassa.exe
+C:\Users\sklero24\Desktop\GestioneProdottiCassa\GestioneProdottiCassa\obj\Debug\GestioneProdottiCassa.pdb
