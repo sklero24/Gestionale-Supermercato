@@ -8,6 +8,182 @@ namespace GestioneProdottiCassa
 {
     internal class GestioneAggiunta
     {
+        static void modificaProdotto(List<Prodotto> lista)
+        {
+
+            Console.WriteLine("tipo di oggetto da cercare?? Premi il tasto corrispondente:");
+            Console.WriteLine("N - nome, C - categoria, \nB - codice a barre, P - prezzo");
+
+            char input = Console.ReadKey().KeyChar;
+
+            switch (input)
+            {
+
+                case 'n':
+                    Console.WriteLine("inserisci il nome da cercare:");
+                    string nome;
+                    try
+                    {
+                        nome = Console.ReadLine();
+                    }
+                    catch (Exception)
+                    {
+                        nome = "default";
+                    }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (nome == lista[i].getNome()) lista[i].setAll();
+                    }
+                    break;
+
+                case 'c':
+                    Console.WriteLine("inserisci la categoria da cercare:");
+                    string categoria;
+                    try
+                    {
+                        categoria = Console.ReadLine();
+                    }
+                    catch (Exception)
+                    {
+                        categoria = "default";
+                    }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (categoria == lista[i].getCategoria()) lista[i].setAll();
+                    }
+                    break;
+
+                case 'b':
+                    Console.WriteLine("inserisci il codice a barre da cercare:");
+                    string codiceABarre;
+                    try
+                    {
+                        codiceABarre = Console.ReadLine();
+                    }
+                    catch (Exception)
+                    {
+                        codiceABarre = "default";
+                    }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (codiceABarre == lista[i].getCodiceABarre()) lista[i].setAll();
+                    }
+                    break;
+
+                case 'p':
+                    Console.WriteLine("inserisci il prezzo da cercare:");
+                    double prezzo;
+                    try
+                    {
+                        prezzo = double.Parse(Console.ReadLine());
+                    }
+                    catch (Exception)
+                    {
+                        prezzo = 0.0;
+                    }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (prezzo == lista[i].getPrezzo()) lista[i].setAll();
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+
+            Console.WriteLine("hai modificato l' oggetto! Premi un tasto per andare avanti");
+            Console.ReadKey();
+
+
+        }
+
+        static void eliminaProdotto(List<Prodotto> lista)
+        {
+
+            Console.WriteLine("in che modo vuoi eliminare l'oggetto?? Premi il tasto corrispondente:");
+            Console.WriteLine("N - nome, C - categoria, \nB - codice a barre, P - prezzo");
+
+            char input = Console.ReadKey().KeyChar;
+
+            switch (input)
+            {
+
+                case 'n':
+                    Console.WriteLine("inserisci il nome da cercare:");
+                    string nome;
+                        try
+                        {
+                            nome = Console.ReadLine();
+                        }
+                        catch (Exception) 
+                        {
+                            nome = "default";
+                        }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (nome == lista[i].getNome()) lista.RemoveAt(i);
+                    }
+                    break;
+
+                case 'c':
+                    Console.WriteLine("inserisci la categoria da cercare:");
+                    string categoria;
+                    try
+                    {
+                        categoria = Console.ReadLine();
+                    }
+                    catch (Exception)
+                    {
+                        categoria = "default";
+                    }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (categoria == lista[i].getCategoria()) lista.RemoveAt(i);
+                    }
+                    break;
+
+                case 'b':
+                    Console.WriteLine("inserisci il codice a barre da cercare:");
+                    string codiceABarre;
+                    try
+                    {
+                        codiceABarre = Console.ReadLine();
+                    }
+                    catch (Exception)
+                    {
+                        codiceABarre = "default";
+                    }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (codiceABarre == lista[i].getCodiceABarre()) lista.RemoveAt(i);
+                    }
+                    break;
+
+                case 'p':
+                    Console.WriteLine("inserisci il prezzo da cercare:");
+                    double prezzo;
+                    try
+                    {
+                        prezzo = double.Parse(Console.ReadLine());
+                    }
+                    catch (Exception)
+                    {
+                        prezzo = 0.0;
+                    }
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (prezzo == lista[i].getPrezzo()) lista.RemoveAt(i);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+
+            Console.WriteLine("hai cancellato l' oggetto! Premi un tasto per andare avanti");
+            Console.ReadKey();
+
+        }
 
         static void aggiuntaProdotto(List<Prodotto> lista)
         {
@@ -235,9 +411,7 @@ namespace GestioneProdottiCassa
                 {
                     if (scelta < 4)
                     {
-
                         ++scelta;
-
                     }
                 }
 
@@ -247,14 +421,18 @@ namespace GestioneProdottiCassa
                     switch (scelta)
                     {
 
-                        case 1:
+                        case 1: //aggiunta vari prodotti
                             aggiuntaProdotto(listaProdotti);
                             break;
 
-                        case 2:
+                        case 2: //eliminazione prodotti
+                            eliminaProdotto(listaProdotti);
                             break;
+
                         case 3:
+                            modificaProdotto(listaProdotti);
                             break;
+
                         case 4:
                             exit = 1;
                             break;

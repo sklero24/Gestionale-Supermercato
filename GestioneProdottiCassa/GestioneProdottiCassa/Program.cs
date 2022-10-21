@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +12,50 @@ namespace GestioneProdottiCassa
 {
     internal class Program
     {
+
+        static void letturaDaFile(List<Prodotto> p)
+        {
+
+            StreamReader reader;
+            reader = new StreamReader("listaProdotti.txt");
+            string testoFile;
+                try
+                {
+                    testoFile = reader.ReadToEnd();
+                    try
+                    {
+
+                        string[] stringhe;
+                        stringhe = testoFile.Split(';');
+                      
+                        foreach (string stringa in stringhe)
+                        {
+                            stringa.TrimStart('n');
+                            string[] variabili = stringa.Split('|');
+                            p.Add(new Prodotto(variabili[0], variabili[1], variabili[2], double.Parse(variabili[3]), variabili[4], DateTime.Parse(variabili[5])));
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+                        //non so cosa non vada, da sistemare
+                        //Console.WriteLine("Non sono riuscito a leggere da file. Premi un qualsiasi tasto per continuare....");
+                        //Console.ReadKey();
+
+                    }
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Errore nell' aprire il file! Premi un qualsiasi tasto per continuare....");
+                    Console.ReadKey();
+                }
+                finally{
+
+                    reader.Close();
+                }
+
+        }
 
         static void outputScelta(int scelta) {
 
@@ -109,18 +156,14 @@ namespace GestioneProdottiCassa
         {
 
             List<Prodotto> prodotti = new List<Prodotto>();
-            //ArrayList prodotti = new ArrayList();
-            //prodotti test
-            prodotti.Add(new Prodotto("Espressioni e sentimenti", "Libri", "libro sul disegno", 19.99 , "9788865050224"));
-            prodotti.Add(new Prodotto("Equilibrio e dinamica dei corpi", "Libri", "libro sul disegno", 19.99 , "9788865050064"));
-            prodotti.Add(new Prodotto("Character Design", "Libri", "libro sul disegno", 19.99, "9788865050101"));
-            prodotti.Add(new Prodotto("Pennarelli - Felt Pens", "Cancelleria", "Pennarelli per disegnare", 2.99 , "8027217008379"));
-            prodotti.Add(new Prodotto("Database SQL e PHP", "Libri", "Libro scolastico su mysql e php",29.99 , "9788820383398"));
 
+
+            //lettura file inizio programma:
+            letturaDaFile(prodotti);
 
             int exit = 0; //variabile per uscire all' infuori del programma e chiudere tutto
-            int scelta = 1; //opzione per girare nel menu, variabile che serve
-            int movimento = 0;
+            int scelta = 1; //opzione per girare nel menu, variabile che serve per visualizzare la scelta
+            int movimento = 0; //variabile per il movimento, 1 alto, 2 basso, 3 invio.
 
             while (exit != 1)
             {
@@ -180,6 +223,16 @@ namespace GestioneProdottiCassa
                             break;
 
                         case 3:
+                            Console.Clear();
+                            //funzionalità varie, da gestire con gli oggetti
+                            Console.WriteLine("menu con varie funzioni da sviluppare." +
+                                "le funzioni che abbiamo sono, print excel da fare" +
+                                "funzione cassa con rilevamento prodotto e pagamento" +
+                                "calcolo valore dei vari prodotti" +
+                                "calcolo guadagni totali se venduti tutti i prodotti" +
+                                "quindi bisogna dividere tutto per categorie ecc");
+
+                            Console.ReadKey();
                             break;
 
                         case 4:

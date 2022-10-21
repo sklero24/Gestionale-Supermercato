@@ -28,6 +28,17 @@ namespace GestioneProdottiCassa
             this.dataAggiunta = DateTime.Now;
 
         }
+        public Prodotto(string nome, string categoria, string descrizione, double prezzo, string codiceABarre, DateTime dataAggiunta)
+        {
+
+            this.nome = nome;
+            this.categoria = categoria;
+            this.descrizione = descrizione;
+            this.codiceABarre = codiceABarre;
+            this.prezzo = prezzo;
+            this.dataAggiunta = dataAggiunta;
+
+        }
 
         public string getNome()
         {
@@ -52,6 +63,11 @@ namespace GestioneProdottiCassa
         {
             return this.codiceABarre;
         }
+        public double getPrezzo()
+        {
+            return this.prezzo;
+        }
+
 
         public void setAll()
         {
@@ -65,6 +81,8 @@ namespace GestioneProdottiCassa
                 this.descrizione = Console.ReadLine();
                 Console.WriteLine("\n scannerizza codice a barre:");
                 this.codiceABarre = Console.ReadLine();
+                Console.WriteLine("\n inserisci il prezzo:");
+                this.prezzo = double.Parse(Console.ReadLine());
                 this.dataAggiunta = DateTime.Now;
 
             }
