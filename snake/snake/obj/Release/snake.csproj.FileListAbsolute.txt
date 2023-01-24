@@ -1,0 +1,12 @@
+C:\Users\sklero24\Desktop\snake\snake\bin\Release\snake.exe.config
+C:\Users\sklero24\Desktop\snake\snake\bin\Release\snake.exe
+C:\Users\sklero24\Desktop\snake\snake\bin\Release\snake.pdb
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.csproj.AssemblyReference.cache
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.csproj.SuggestedBindingRedirects.cache
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.snakeMenu.resources
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.Properties.Resources.resources
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.snakeGame.resources
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.csproj.GenerateResource.cache
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.csproj.CoreCompileInputs.cache
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.exe
+C:\Users\sklero24\Desktop\snake\snake\obj\Release\snake.pdb
