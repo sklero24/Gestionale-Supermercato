@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//ciao mondo
+
 namespace snake
 {
     public static class Global
